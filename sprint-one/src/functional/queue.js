@@ -9,14 +9,14 @@ var Queue = function() {
 
   someInstance.enqueue = function(value) {
     var len = Object.keys(storage).length;
-    if (Object.keys(storage).length === 0){
+    if (Object.keys(storage).length === 0) {
       storage[0] = value;
     } else {
       for (var i = len; i >= 0; i--) {
         if (i === 0 ) {
           storage[i] = value;
         } else {
-        storage[i] = storage[i - 1];
+          storage[i] = storage[i - 1];
         }
       }
     }
@@ -28,7 +28,7 @@ var Queue = function() {
   someInstance.dequeue = function() {
     var result = storage[Object.keys(storage).length - 1];
     delete storage[Object.keys(storage).length - 1];
-    if (count !== 0){
+    if (count !== 0) {
       count --;
     }
     return result;
